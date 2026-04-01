@@ -1,0 +1,85 @@
+Detecting compiler hash for triplet x64-windows...
+Compiler found: C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe
+The following packages will be built and installed:
+  * brotli:x64-windows@1.2.0
+  * bzip2[core,tool]:x64-windows@1.0.8#6
+  * freetype[brotli,bzip2,core,png,zlib]:x64-windows@2.13.3
+  * libogg:x64-windows@1.3.6#1
+  * libpng:x64-windows@1.6.53
+  * libvorbis:x64-windows@1.3.7#4
+    sdl2:x64-windows@2.32.10
+    sdl2-mixer[core,wavpack]:x64-windows@2.8.1#2
+    sdl2-ttf:x64-windows@2.24.0
+  * vcpkg-cmake:x64-windows@2024-04-23
+  * vcpkg-cmake-config:x64-windows@2024-05-23
+  * wavpack:x64-windows@5.8.1#2
+  * zlib:x64-windows@1.3.1
+Additional packages (*) will be modified to complete this operation.
+Restored 13 package(s) from C:\Users\Berke KANDEM─░R\AppData\Local\vcpkg\archives in 647 ms. Use --debug to see more details.
+Installing 1/13 vcpkg-cmake-config:x64-windows@2024-05-23...
+Elapsed time to handle vcpkg-cmake-config:x64-windows: 11.2 ms
+vcpkg-cmake-config:x64-windows package ABI: 43067825c5419f5465b832f158f920cd31f9b73848b571323b25cb5eea694d8b
+Installing 2/13 vcpkg-cmake:x64-windows@2024-04-23...
+Elapsed time to handle vcpkg-cmake:x64-windows: 15.3 ms
+vcpkg-cmake:x64-windows package ABI: 9e686886ddd2bba2667a758f0df5ba2a4e02e7dbfb831c4f261801b93985d3ce
+Installing 3/13 sdl2:x64-windows@2.32.10...
+Elapsed time to handle sdl2:x64-windows: 119 ms
+sdl2:x64-windows package ABI: 0b306a0cb9fe2cd1648b93befd42e2e30bd68f77e2a9b34d59e08c469a6e3e83
+Installing 4/13 wavpack:x64-windows@5.8.1#2...
+Elapsed time to handle wavpack:x64-windows: 27.4 ms
+wavpack:x64-windows package ABI: 2fe670228592d8efd46e8278a3fb8b221d43e4b7c2a1b0f54049a81e9581e671
+Installing 5/13 libogg:x64-windows@1.3.6#1...
+Elapsed time to handle libogg:x64-windows: 30.3 ms
+libogg:x64-windows package ABI: 177412a2ad709af983a34e03544517d3b198451850ce0798c9787e7cbf1dd060
+Installing 6/13 libvorbis:x64-windows@1.3.7#4...
+Elapsed time to handle libvorbis:x64-windows: 107 ms
+libvorbis:x64-windows package ABI: 56d43ac1b500c137673a00d88fce65d06edd41f1f908a45b40682a27f8d63635
+Installing 7/13 sdl2-mixer[core,wavpack]:x64-windows@2.8.1#2...
+Elapsed time to handle sdl2-mixer:x64-windows: 31.4 ms
+sdl2-mixer:x64-windows package ABI: fb9887b66458bc88a457ab7a8f39b58231ec86d8dcc78839c2f2eda79b987577
+Installing 8/13 zlib:x64-windows@1.3.1...
+Elapsed time to handle zlib:x64-windows: 28.7 ms
+zlib:x64-windows package ABI: c33d592dd282e1dbe0a07b82a985df96648eb585331faade4469bd52f27f3825
+Installing 9/13 libpng:x64-windows@1.6.53...
+Elapsed time to handle libpng:x64-windows: 47.6 ms
+libpng:x64-windows package ABI: 1bd09d11f9556811f9ead799b37a75b8ffa8c753c51c78f8d136767a14f8870a
+Installing 10/13 bzip2[core,tool]:x64-windows@1.0.8#6...
+Elapsed time to handle bzip2:x64-windows: 29.4 ms
+bzip2:x64-windows package ABI: 636ff0310b4cf21c61e2dde12ef21a7166b12da689cdbb352333a3f5eec7670c
+Installing 11/13 brotli:x64-windows@1.2.0...
+Elapsed time to handle brotli:x64-windows: 47.6 ms
+brotli:x64-windows package ABI: a4a40756108837ed82b01a9ea03494f3b2ad76487f35ea4f4bac2d95a1491448
+Installing 12/13 freetype[brotli,bzip2,core,png,zlib]:x64-windows@2.13.3...
+Elapsed time to handle freetype:x64-windows: 88.5 ms
+freetype:x64-windows package ABI: d773ab06a74cee1f65aad837a5a0aa4d4d4f75c9b479eff8ea2dbbaff45961d8
+Installing 13/13 sdl2-ttf:x64-windows@2.24.0...
+Elapsed time to handle sdl2-ttf:x64-windows: 28.4 ms
+sdl2-ttf:x64-windows package ABI: aeec488d843f534a243bbbe6a97d68c3277bf6a552a65a8f896706319b987e4e
+Installed contents are licensed to you by owners. Microsoft is not responsible for, nor does it grant any licenses to, third-party packages.
+Packages installed in this vcpkg installation declare the following licenses:
+(FTL OR GPL-2.0-or-later)
+BSD-3-Clause
+MIT
+Zlib
+bzip2-1.0.6
+libpng-2.0
+sdl2 provides CMake targets:
+
+    find_package(SDL2 CONFIG REQUIRED)
+    target_link_libraries(main
+        PRIVATE
+        $<TARGET_NAME_IF_EXISTS:SDL2::SDL2main>
+        $<IF:$<TARGET_EXISTS:SDL2::SDL2>,SDL2::SDL2,SDL2::SDL2-static>
+    )
+
+sdl2-mixer provides CMake targets:
+
+    find_package(SDL2_mixer CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE $<IF:$<TARGET_EXISTS:SDL2_mixer::SDL2_mixer>,SDL2_mixer::SDL2_mixer,SDL2_mixer::SDL2_mixer-static>)
+
+sdl2-ttf provides CMake targets:
+
+    find_package(SDL2_ttf CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE $<IF:$<TARGET_EXISTS:SDL2_ttf::SDL2_ttf>,SDL2_ttf::SDL2_ttf,SDL2_ttf::SDL2_ttf-static>)
+
+All requested installations completed successfully in: 633 ms

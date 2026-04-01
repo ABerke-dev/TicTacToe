@@ -1,0 +1,10 @@
+^C:\C_PLUS_PLUS\TICTACTOE\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/c_plus_plus/TicTacToe -BC:/c_plus_plus/TicTacToe/build --check-stamp-file C:/c_plus_plus/TicTacToe/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
